@@ -5,21 +5,19 @@
 \usepackage{amsfonts}
 \usepackage{textcomp}
 \usepackage{graphicx}
-%\usepackage[dvips]{graphicx}
 \usepackage{fancyhdr}
 \usepackage{subfigure}
 \usepackage{cite}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage{longtable}
+\usepackage{listings}
+\usepackage{dirtree}
 \linespread{1.5}
 \headsep .4in
 \footskip=.5in
 \begin{document}
 \pagenumbering{roman}
-%\tableofcontents
-%\listoffigures
-%\listoftables
 
 \pagestyle{empty}
 \include{ch0/cover} %title
@@ -28,28 +26,28 @@
 \include{ch0/certificate}
 \include{ch0/acknowledgement}
 
-
-
 \addcontentsline{toc}{chapter}{Abstract}
-\include{ch0/Abstract}
-% \thispagestyle{empty}
-% \cleardoublepage
+\include{ch0/abstract}
+\thispagestyle{empty}
+\cleardoublepage
 
-% \linespread{1.5}
-% \selectfont
+%\listoffigures
+%\listoftables
 
-% \tableofcontents
-% \cleardoublepage
+\linespread{1.5}
+\selectfont
 
-% \pagenumbering{arabic}
-% \pagestyle{fancy}
+\tableofcontents
+\cleardoublepage
 
-% \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\textbf{Chapter\thechapter}}}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{Chapter\thechapter}}}
 
 
-% %\include{ch0/ps1}
-% \include{ch1/chapter1}
+\include{ch1/chapter1}
 % \cleardoublepage
 
 % \include{ch3/chapter1}
@@ -74,7 +72,5 @@
 % \bibliography{refer}
 % \nocite{*}
 % \cleardoublepage
-
-
 
 \end{document}
