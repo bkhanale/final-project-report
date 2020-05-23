@@ -1,0 +1,80 @@
+\chapter{\textbf{Preliminary}}
+There are three important parts of this project:
+\begin{itemize}
+    \item Django (for API developement)
+    \item Postgresql (for database requirements)
+    \item Social Auth (for authentication)
+\end{itemize}
+
+\section{\textbf{Django}}
+Django takes care of integrating the database, authentication and authorization
+of the application. For this, Django asks us to construct each of models, views
+and templates for the application. Its important to note that all of the three
+parts are to be defined for every application in the project.
+
+\subsection{\textbf{Models}}
+Every model represents a table in the database. We will be forming up the
+basic model structure and follow them throughout the entire project.
+Every model can be defined in the \texttt{models.py} file which is recognized
+by django or in the \texttt{models} module.\\
+The overall model structure would look like this:\\
+
+\dirtree{%
+.1 project.
+.2 app1.
+.3 models.
+.4 modela.py. 
+.4 modelb.py. 
+.4 modelc.py. 
+.2 app2.
+.3 models.
+.4 modela.py. 
+.4 modelb.py. 
+}
+
+\subsection{\textbf{Views}}
+Every view represents the exchange of data between every API call. Every view
+gets a request object and is expected to return a response object. The request
+contains all information regarding the API call including the user who
+initiated it. Also all of the required parameters for the API call are passed
+in the same request object.\\
+Views too can be distributed across multiple files for convenience.
+
+\subsection{\textbf{Templates}}
+Templates are used for the user interface which are automatically rendered by
+Django in html. By default, Django comes with the \texttt{admin} template.
+The admin page on Django lets user to modify any of the existing models and
+settings. Multiple templates can be added representing the user interface.
+The templates are also convenient in authentication since we can use variables
+inside templates.
+
+\section{Postgresql}
+We've used Postgresql for out database requirements. Because postgres can
+scale on high requirement environment and is one of the best options for
+production databases. The postgresql can be installed as a separate package
+and is available on all platforms including Linux, Windows and MacOS making
+it ideal for deployment and development purpose.
+
+Postgres related settings can be configured inside \texttt{settings.py} file
+inside project directory. We can also specify the requirements as a part of the
+environemt file to avoid exposing the credentials. The database setting is
+generic in Django meaning you can use the database identically as any other
+database driver. Hence, it is very easy to switch between database if we ever
+wanted to.
+
+\section{\textbf{Social Auth}}
+For authentication there is a separate package known as
+\textit{Python Social Auth} which takes care of our social authentication.
+Social authentication is important because many users now try to avoid
+remembering username and password and hence, using one of the social auth
+method will bypass the need to remember usernames and passwords. This
+authentication is based on one of the social media platforms including Google,
+Facebook, Twitter, etc. These platforms proving authentication flow known as
+\textit{OAuth}. The common user fields like email address, name are
+automatically obtained from these platforms and a \textit{token} is created
+for the user to communicate with the application.
+
+Everyone in Turtlemint have thier email with domain \textit{turtlemint.com}
+which lets us use Google OAuth2 to authenticate the user before logging it
+on our application. The email address and name is obtained from Google and
+appropriate permissions are issued to the user based on his access level.

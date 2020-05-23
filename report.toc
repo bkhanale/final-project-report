@@ -5,3 +5,10 @@
 \contentsline {section}{\numberline {1.3}\textbf {Method used}}{2}%
 \contentsline {section}{\numberline {1.4}\textbf {Limitations}}{2}%
 \contentsline {section}{\numberline {1.5}\textbf {Project Structure}}{3}%
+\contentsline {chapter}{\numberline {2}\textbf {Preliminary}}{4}%
+\contentsline {section}{\numberline {2.1}\textbf {Django}}{4}%
+\contentsline {subsection}{\numberline {2.1.1}\textbf {Models}}{4}%
+\contentsline {subsection}{\numberline {2.1.2}\textbf {Views}}{5}%
+\contentsline {subsection}{\numberline {2.1.3}\textbf {Templates}}{5}%
+\contentsline {section}{\numberline {2.2}Postgresql}{6}%
+\contentsline {section}{\numberline {2.3}\textbf {Social Auth}}{6}%
