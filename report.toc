@@ -24,3 +24,6 @@
 \contentsline {section}{\numberline {4.3}Create serializers}{15}%
 \contentsline {section}{\numberline {4.4}Add CRUD operations}{16}%
 \contentsline {section}{\numberline {4.5}Add views}{16}%
+\contentsline {section}{\numberline {4.6}API testing}{17}%
+\contentsline {subsection}{\numberline {4.6.1}Unittests}{18}%
+\contentsline {subsection}{\numberline {4.6.2}Postman tests}{18}%

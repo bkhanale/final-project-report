@@ -138,3 +138,48 @@ urlpatterns = [
 
 The views also link to the business logic for that API, this will be covered
 in the next chapter as a part of Turtlemint and its requirements.
+
+\section{API testing}
+The APIs can be manually tested using any framework like Postman. Django also
+provides a nice UI to be able to send requests. At turtlemint we've a culture
+of using Postman extensively for API testing and we've followed the same.
+Although, apart from the Postman tests it is also necessary to construct
+unittests and view tests using Django's \texttt{TestCase} class.
+
+\subsection{Unittests}
+Django provides an extended version of \texttt{unittest.TestCase} class which
+automatically creates a test database and destroys it at the end of test
+execution cycle. Also every test is ran as a separate transaction hence
+allowing the database to rollback automatically once some error is encountered
+in the tests.
+
+As per the default behaviour of unittest, every test file should start with
+\texttt{test} prefix and should correctly represent the file under testing.
+Tests can be written as a part of a class which may include \texttt{setUp}
+and \texttt{taildown} function to represent to initate, and clear some process
+at the start and the end of the test execution.
+
+\begin{pythoncode}
+class TestTurtlemintModel(TestCase):
+    def setUp(self):
+        # Run something before running the testcase
+        self.model = TurtlemintModel
+    def test_get_records_count(self):
+        # Get the output from the method under test
+        result = get_records_count(self.model)
+        self.assertEqual(result, 1) # 1 representing expexted result
+\end{pythoncode}
+
+\subsection{Postman tests}
+Unittests are always preferred, but for some reason if we need some sort of
+integration tests then postman tests can be written. Postman is an application
+used for API collection management. It introduces a lot of features including
+one to write tests for the API collections. For every request you can mock
+the expected response and check if the response is correct or not. Although
+this might be helpful in some cases, we initially wrote some tests here but
+later due to introduction of unittests we dropped this process.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{ch4/postman_test.png}
+\caption{Sample Postman testcase}
+\end{figure}
