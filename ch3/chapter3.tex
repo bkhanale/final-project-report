@@ -1,0 +1,115 @@
+\chapter{Project Architecture}
+
+\section{An overview of the project archituecture}
+The project objective is to ease the process of updating and managing the
+database with proper authorization for the users. This adds up to few main
+components of the project which are:
+
+\begin{itemize}
+    \item Database tables
+    \item CRUD operations
+    \item User permissions
+\end{itemize}
+
+\subsection{Database tables}
+Currently in Turtlemint the entire database in nosql MongoDB. Hence, the first
+challenge is to convert these nosql tables into relational postgres tables and
+import all data from the previous database to current database. The number of
+such tables is huge and hence some scripts are generated to copy the previous
+database tables into the current ones. We will take a look at these scripts
+later in the models section.
+
+\subsection{CRUD operations}
+Every table or model in a database has some basic CRUD (Create, Read, Update,
+Delete) operations associated with it. These are declared in the models class
+itself to avoid rewriting them again in the business logic. These operations
+handle the basic interation with the database and can be used anywhere in the
+project scope.
+
+\begin{pythoncode}
+from django.db import models
+
+def create(**kwargs):
+    turtlemint_model.objects.create(**kwargs)
+
+def read(**kwargs):
+    turtlemint_model.objects.get(**kwargs)
+
+def delete(**kwargs):
+    turtlemint_model.objects.get(**kwargs).delete()
+
+class turtlemint_model(models.Model):
+    """
+    Model representing turtlemint meta information.
+    """
+    key = models.CharField(max_length=100, unique=True, blank=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=100)
+    ...
+\end{pythoncode}
+
+\subsection{User permissions}
+There are usually two ways we can create users based on their permission
+levels. One of the ways is to use Django's inbuilt \texttt{groups} which can
+create seperate groups for users and every group would then have a dedicated
+level of permission which would then be applied for every user in that group.
+This process is handy for most of the simple applications which don't have
+to deal with a lot of different user sets.
+
+The other way is to define a \texttt{CustomUser} model overriding Django's
+inbuilt \texttt{User} model. This gives us much more freedom over the user
+characterstics and can then be used with different permission classes. As
+mentioned above, Django have some of the permission classes already defined
+while other can be manually created.
+
+\begin{pythoncode}
+class TurtlemintUser(AbstractBaseUser):
+    """
+    This class represents Custom User Model,
+    that overrides django builtin User model
+    """
+    key = models.CharField(max_length=100, unique=True, blank=True)
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    password = models.CharField(max_length=200, blank=True)
+    ...
+\end{pythoncode}
+
+Every user has some sort of permissions associated with it. These permissions
+are used to determine whether a user can interact with a certain database table
+or not. Django in itself provides \texttt{PermissionClasses} which can be used
+to determine the scope for the user. We can also create custom permissions
+classes by extending the \texttt{BasePermission} class and overriding
+appropriate class methods.
+
+An example of a \texttt{CustomPermission} class can be given as below:
+\begin{pythoncode}
+from rest_framework.permissions import BasePermission
+class IsSuperAdmin(BasePermission):
+    """
+    Allows access only to super admin users.
+    """
+    def has_permission(self, request, view):
+        return bool(request.user and request.user.is_staff)
+\end{pythoncode}
+
+\section{Business Logic}
+Most of the archituecture is covered in the above sections, there are still
+some organization specific requirements which are to be fullfilled. These are
+all considered under business logic. The business logic just represents the
+actual code written to complete an objective or requirement imposed by the
+organization. At Turtlemint, we've number of requirements for which we need
+to split the project into several modules.
+
+The most of the business logic should go in the \texttt{services/} directory.
+This is not a Django specific module, but is actually user defined. Hence, the
+name can be changed to whichever suitable. The business logic should be as
+isolated as possible since then it will be easier to write unittests against
+it. Unittests are written to check for every possible scenario and to check if
+its response is the one which is expected. Having a good code coverage will
+help maintainers in matintaining the software in long run.

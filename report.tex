@@ -1,5 +1,4 @@
 \documentclass[12pt,a4paper,oneside]{report}
-\usepackage[top=1.5in, bottom=1.5in, left=1.5in, right=1.25in]{geometry}
 \usepackage{latexsym}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -13,23 +12,33 @@
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage{dirtree}
+\usepackage{minted}
+
 \linespread{1.5}
-\headsep .4in
-\footskip=.5in
+\setlength{\headheight}{15pt}
+
 \begin{document}
+
+\newminted[pythoncode]{python}{
+autogobble=true,
+fontfamily=tt,
+fontsize=\footnotesize,
+linenos=true,
+numberblanklines=true,
+frame=lines,
+tabsize=4
+}
+
 \pagenumbering{roman}
 
 \pagestyle{empty}
-\include{ch0/cover} %title
-\cleardoublepage
+\include{ch0/cover}
 \include{ch0/undertaking}
 \include{ch0/certificate}
 \include{ch0/acknowledgement}
-
 \addcontentsline{toc}{chapter}{Abstract}
 \include{ch0/abstract}
 \thispagestyle{empty}
-\cleardoublepage
 
 %\listoffigures
 %\listoftables
@@ -38,7 +47,6 @@
 \selectfont
 
 \tableofcontents
-\cleardoublepage
 
 \pagenumbering{arabic}
 \pagestyle{fancy}
@@ -46,9 +54,9 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{Chapter\thechapter}}}
 
-
 \include{ch1/chapter1}
 \include{ch2/chapter2}
+\include{ch3/chapter3}
 
 % \renewcommand{\chaptermark}[1]{\markboth{{#1}}{\section}}
 % %\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}

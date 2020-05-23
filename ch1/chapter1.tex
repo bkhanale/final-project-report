@@ -11,7 +11,7 @@ information about the request being made. The server then has to return the
 appropriate Response object which then the browser parses and outputs for the
 user. This exchange between request and response is a part of Views.
 
-\section{\textbf{Background}}
+\section{Background}
 Turtlemint has a separate database which records most of the things related to
 insurance policy issuance. This data is very volatile and is expected to change
 every month. Due to this, it becomes harder to change the database everytime
@@ -19,7 +19,7 @@ there is a change in the information. To handle this issue, the purpose of the
 project is to create a new service which would wrap the information change in
 terms of database calls and let the user seemlessly update the information.
 
-\section{\textbf{Significance}}
+\section{Significance}
 The new service will be able to handle all information changes related to the
 database. Moreover the service would have an integrated authentication and
 authorization which allows multiple users to use this service at a time.
@@ -28,7 +28,7 @@ team to manually create database queries and update accordingly. This process
 was not only time consuming but also was inefficient. The new service would
 solve this issue and would allow the data team itself to update the database.
 
-\section{\textbf{Method used}}
+\section{Method used}
 The service is built using Django and Django Rest Framework (DRF) which are
 two Python packages built for faster development of database-driven web
 applications. Django is also open-source and allows users to modify the
@@ -38,7 +38,7 @@ support applications. Django has three major parts: \texttt{models},
 schema, views contain the business logic and templates are used for user
 interface.
 
-\section{\textbf{Limitations}}
+\section{Limitations}
 Django being open-source does help is most issues. Although, since Django was
 built to reduce the developement time significantly it might still not have
 all features of a system with independent database architecture. Django also
@@ -46,13 +46,13 @@ introduces the concept of migrations which are a set of database schema changes
 maintained as a set of files. These migrations can be difficult to manage if
 an applications is prone to lot of database changes.
 
-\section{\textbf{Project Structure}}
+\section{Project Structure}
 Django has already defined its project structure. Every Django project has some
 applications. Every applications represents set of logic related to one purpose
 or business objective. Every project can have any number of applications inside
 it. There is a common \texttt{settings.py} file which is used for managing
-settings for all applications.\\
-The basic structure of the project can be represented as below:\\
+settings for all applications. The basic structure of the project can be
+represented as below:
 
 \dirtree{%
 .1 project.
