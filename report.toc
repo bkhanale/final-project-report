@@ -27,3 +27,8 @@
 \contentsline {section}{\numberline {4.6}API testing}{17}%
 \contentsline {subsection}{\numberline {4.6.1}Unittests}{18}%
 \contentsline {subsection}{\numberline {4.6.2}Postman tests}{18}%
+\contentsline {chapter}{\numberline {5}Turtlemint Projects with Django}{20}%
+\contentsline {section}{\numberline {5.1}Turtlemint Assistant Project}{20}%
+\contentsline {subsection}{\numberline {5.1.1}The primary objective}{21}%
+\contentsline {subsection}{\numberline {5.1.2}The features}{22}%
+\contentsline {section}{\numberline {5.2}MintAcademy}{25}%
