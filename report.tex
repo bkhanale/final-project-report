@@ -13,6 +13,7 @@
 \usepackage{listings}
 \usepackage{dirtree}
 \usepackage{minted}
+\usepackage{url}
 
 \linespread{1.5}
 \setlength{\headheight}{15pt}
@@ -59,18 +60,13 @@ tabsize=4
 \include{ch3/chapter3}
 \include{ch4/chapter4}
 \include{ch5/chapter5}
+\include{chz/results}
+\include{chz/challenges}
+\include{chz/conclusion}
 
-% \renewcommand{\chaptermark}[1]{\markboth{{#1}}{\section}}
-% %\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
-
-
-% \rhead{\textit{Bibliography}}
-% \lhead{}
-
-% \addcontentsline{toc}{chapter}{Bibliography}
-% \bibliographystyle{unsrt}
-% \bibliography{refer}
-% \nocite{*}
-% \cleardoublepage
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{unsrt}
+\bibliography{report}
+\nocite{*}
 
 \end{document}

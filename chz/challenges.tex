@@ -1,0 +1,36 @@
+\chapter{Challenges}
+Currently, Django is one of the most featured frameworks for database-driven
+web applications but still doesn't give a full control over the user-interface
+where we have several more featured frameworks like React, etc. These are
+a bit harder to configure properly with Django. Below is the summary of
+challenges faced during the development:
+
+\begin{itemize}
+    \item Integrating backend with a React frontend:
+    
+    Django templates were very less customizable and hence for the modern
+    web application we need something more customizable like React. React is
+    a JavaScript framework used to create some very powerful frontend
+    applications. Both of Turtlemint Assistant and MintAcademy were built on
+    React for the frontend and hence integrating the them was a Challenges
+    due to Django being highly customized for its templates.
+
+    \item Solving CORS issues in session based auth:
+    
+    Django by default uses session based authentication for the users. This
+    works well for applications where both of the frontend and backend services
+    are running on the same system. But having a separate frontend will cause
+    CORS issue when setting up the cookie for the browser since the information
+    isn't transferred between cross origin domains. To solve this we had to
+    move towards JWT (Java Web Token) authentication flow.
+
+    \item Multiple database issue:
+    
+    So Turtlemint have multiple databases deployed on different servers. This
+    was an issue since we had to manually switch between databases to use one
+    of the other databases. Django lets us specify which database to use in
+    its settings.py file but if we ever had to connect to other database then
+    we'll have to switch to them manually. This was causing gaps between the
+    database flow, also switching was costing us some time. We had to finally
+    migrate the other database into current one to solve this issue.
+\end{itemize}
