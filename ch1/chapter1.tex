@@ -1,12 +1,12 @@
 \chapter{Introduction}
 
-In any service dealing with the database it becomes extremely important to
+In any service dealing with the database becomes extremely important to
 have a constant database structure in place before moving on towards the
 business logic. In Django we define the service in terms of \texttt{app},
 \texttt{models}, \texttt{views} and \texttt{services}. These four parts
 represent the core logic service.
 \texttt{Views} take care of the exchange of the request and response objects from APIs.
-Usually when a API is called, a request object is sent to the server containing
+Usually when an API is called, a request object is sent to the server containing
 information about the request being made. The server then has to return the
 appropriate Response object which then the browser parses and outputs for the
 user. This exchange between request and response is a part of Views.
@@ -21,11 +21,11 @@ terms of database calls and let the user seamlessly update the information.
 
 \section{Significance}
 The new service will be able to handle all information changes related to the
-database. Moreover the service would have an integrated authentication and
+database. Moreover, the service would have an integrated authentication and
 authorization which allows multiple users to use this service at a time.
 Previously, someone from the development team had to intervene with the data
 team to manually create database queries and update accordingly. This process
-was not only time consuming but also was inefficient. The new service would
+was not only time-consuming but also was inefficient. The new service would
 solve this issue and would allow the data team itself to update the database.
 
 \section{Method used}
@@ -39,17 +39,17 @@ schema, views contain the business logic and templates are used for user
 interface.
 
 \section{Limitations}
-Django being open-source does help is most issues. Although, since Django was
+Django being open-source does help in most issues. Although, since Django was
 built to reduce the development time significantly it might still not have
 all features of a system with independent database architecture. Django also
 introduces the concept of migrations which are a set of database schema changes
 maintained as a set of files. These migrations can be difficult to manage if
-an applications is prone to lot of database changes.
+an application is prone to a lot of database changes.
 
 \section{Project Structure}
 Django has already defined its project structure. Every Django project has some
-applications. Every applications represents set of logic related to one purpose
-or business objective. Every project can have any number of applications inside
+applications. Every application represent set of logic related to one purpose
+or business objective. A project can have any number of applications inside
 it. There is a common \texttt{settings.py} file which is used for managing
 settings for all applications. The basic structure of the project can be
 represented as below:
