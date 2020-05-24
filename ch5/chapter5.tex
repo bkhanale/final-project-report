@@ -103,8 +103,8 @@ updates. Here is a summary of the features we developed:
 \section{MintAcademy}
 
 MintAcademy is an Learning Management Software (LMS) developed as a SaaS
-(Software as a Service) platform for its tenants. The MintAcademy was
-originally written using GCP (Google Cloud Platform), GAE (Google App Engine)
+(Software as a Service) platform for its Turtlemint clients. The MintAcademy
+was originally written using GCP (Google Cloud Platform), GAE (Google App Engine)
 and NDB Storage. With the rising issues and cost reduction, it was and still
 is being re-written in Django. I'm one of the core developers involved in this
 migration. Until now, most of the core functionality is already migrated
@@ -112,4 +112,51 @@ and is expected to go live in the month of June, 2020.
 
 The current implementation uses GCP extensively and uses all of its features.
 It is currently live on production server and is serving to thousands of users
-at the moment.
+at the moment. Here are some key features of MintAcademy:
+
+\begin{itemize}
+    \item Mintpro integration:
+
+    Turtlemint's main platform is Mintpro is which the main working platform
+    for majority of the Turtlemint's business. MintAcademy is integrated in
+    Mintpro. Hence, all Mintpro users can access MintAcademy within their
+    account. Mintpro is also distributed across Turtlemint's clients and hence
+    all of Turtlemint clients can use MintAcademy without having to configure
+    it separately.
+
+    \item Organized courses for the users:
+    
+    The courses offerred are organized as per the type and course admin can
+    assign courses individually to the users. The courses can be managed via
+    each client admins. Hence giving them freedom to upload and manage their
+    courses independently.
+
+    \begin{figure}
+        \includegraphics[width=\textwidth]{ch5/lms_courses.png}
+        \caption{MintAcademy course page}
+    \end{figure}
+
+    \item Course reports
+    
+    The client might need to check how many of their courses are active among
+    users and what is their completion rate. This information is available for
+    all admins through the reports menu.
+
+    \begin{figure}
+        \includegraphics[width=\textwidth]{ch5/lms_reports.png}
+        \caption{MintAcademy course reports page}
+    \end{figure}
+
+    \item User reports
+
+    Users can be directly managed by the admins for their branches.
+    They can also check user report to check what is the progress made by the
+    user in their courses. This becomes handy for the clients to check how
+    many users are are active in a spefic course.
+
+    \begin{figure}
+        \includegraphics[width=\textwidth]{ch5/lms_users.png}
+        \caption{MintAcademy users page}
+    \end{figure}
+
+\end{itemize}
