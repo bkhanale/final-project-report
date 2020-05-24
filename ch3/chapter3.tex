@@ -1,6 +1,6 @@
 \chapter{Project Architecture}
 
-\section{An overview of the project archituecture}
+\section{An overview of the project architecture}
 The project objective is to ease the process of updating and managing the
 database with proper authorization for the users. This adds up to few main
 components of the project which are:
@@ -23,7 +23,7 @@ later in the models section.
 Every table or model in a database has some basic CRUD (Create, Read, Update,
 Delete) operations associated with it. These are declared in the models class
 itself to avoid rewriting them again in the business logic. These operations
-handle the basic interation with the database and can be used anywhere in the
+handle the basic interaction with the database and can be used anywhere in the
 project scope.
 
 \begin{pythoncode}
@@ -51,14 +51,14 @@ class turtlemint_model(models.Model):
 \subsection{User permissions}
 There are usually two ways we can create users based on their permission
 levels. One of the ways is to use Django's inbuilt \texttt{groups} which can
-create seperate groups for users and every group would then have a dedicated
+create separate groups for users and every group would then have a dedicated
 level of permission which would then be applied for every user in that group.
 This process is handy for most of the simple applications which don't have
 to deal with a lot of different user sets.
 
 The other way is to define a \texttt{CustomUser} model overriding Django's
 inbuilt \texttt{User} model. This gives us much more freedom over the user
-characterstics and can then be used with different permission classes. As
+characteristics and can then be used with different permission classes. As
 mentioned above, Django have some of the permission classes already defined
 while other can be manually created.
 
@@ -99,8 +99,8 @@ class IsSuperAdmin(BasePermission):
 \end{pythoncode}
 
 \section{Business Logic}
-Most of the archituecture is covered in the above sections, there are still
-some organization specific requirements which are to be fullfilled. These are
+Most of the architecture is covered in the above sections, there are still
+some organization specific requirements which are to be fulfilled. These are
 all considered under business logic. The business logic just represents the
 actual code written to complete an objective or requirement imposed by the
 organization. At Turtlemint, we've number of requirements for which we need
@@ -109,7 +109,7 @@ to split the project into several modules.
 The most of the business logic should go in the \texttt{services/} directory.
 This is not a Django specific module, but is actually user defined. Hence, the
 name can be changed to whichever suitable. The business logic should be as
-isolated as possible since then it will be easier to write unittests against
-it. Unittests are written to check for every possible scenario and to check if
+isolated as possible since then it will be easier to write unittest against
+it. Unittest are written to check for every possible scenario and to check if
 its response is the one which is expected. Having a good code coverage will
-help maintainers in matintaining the software in long run.
+help maintainers in maintaining the software in long run.

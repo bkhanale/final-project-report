@@ -1,7 +1,7 @@
 \chapter{Preliminary}
 There are three important parts of this project:
 \begin{itemize}
-    \item Django (for API developement)
+    \item Django (for API development)
     \item Postgresql (for database requirements)
     \item Social Auth (for authentication)
 \end{itemize}
@@ -57,7 +57,7 @@ it ideal for deployment and development purpose.
 
 Postgres related settings can be configured inside \texttt{settings.py} file
 inside project directory. We can also specify the requirements as a part of the
-environemt file to avoid exposing the credentials. The database setting is
+environment file to avoid exposing the credentials. The database setting is
 generic in Django meaning you can use the database identically as any other
 database driver. Hence, it is very easy to switch between database if we ever
 wanted to.
@@ -74,7 +74,7 @@ Facebook, Twitter, etc. These platforms proving authentication flow known as
 automatically obtained from these platforms and a \textit{token} is created
 for the user to communicate with the application.
 
-Everyone in Turtlemint have thier email with domain \textit{turtlemint.com}
+Everyone in Turtlemint have their email with domain \textit{turtlemint.com}
 which lets us use Google OAuth2 to authenticate the user before logging it
 on our application. The email address and name is obtained from Google and
 appropriate permissions are issued to the user based on his access level.

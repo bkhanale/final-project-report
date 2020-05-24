@@ -20,7 +20,7 @@ directory.
 
 \section{Create models}
 As mentioned previously before, models represent the database tables. These
-models can be defined in seperate files or can be defined in a single file
+models can be defined in separate files or can be defined in a single file
 named \texttt{models.py} as required. Before starting to write the actual
 implementation it is critical to design and write the database schema first.
 Django provides you with an inbuilt \texttt{Model} class which you can extend
@@ -69,13 +69,13 @@ created migrations are then ran using the command
 
 \section{Create serializers}
 Serializers allow complex data such as querysets and model instances to be
-converted to native Python datatypes that can then be easily rendered into
+converted to native Python datatype that can then be easily rendered into
 JSON, XML or other content types. Serializers also provide deserialization,
 allowing parsed data to be converted back into complex types, after first
 validating the incoming data.
 
 Every models should have its own serializer, representing the construction of
-the JSON object throught the model fields. Serializers are extremely useful
+the JSON object throughout the model fields. Serializers are extremely useful
 to return the JSON object instantly without having to construct it manually.
 Django allows us to define the fields we want the serializer to construct the
 JSON with. Also, we can have multiple serializers for a model if we want a
@@ -104,7 +104,7 @@ Views take care of accepting the request and returning the appropriate
 response. These are defined inside the \texttt{views} module and can be split
 into various files and classes. Views can be written in two ways, having a
 separate class to handle all requests including GET, POST, DELETE, etc for a
-single endpoint or to have indivitual view methods for each type of request.
+single endpoint or to have individual view methods for each type of request.
 Django supports both ways equally and hence any method should suffice based
 on the development need.
 
@@ -144,19 +144,19 @@ The APIs can be manually tested using any framework like Postman. Django also
 provides a nice UI to be able to send requests. At turtlemint we've a culture
 of using Postman extensively for API testing and we've followed the same.
 Although, apart from the Postman tests it is also necessary to construct
-unittests and view tests using Django's \texttt{TestCase} class.
+unittest and view tests using Django's \texttt{TestCase} class.
 
-\subsection{Unittests}
+\subsection{Unittest}
 Django provides an extended version of \texttt{unittest.TestCase} class which
 automatically creates a test database and destroys it at the end of test
 execution cycle. Also every test is ran as a separate transaction hence
 allowing the database to rollback automatically once some error is encountered
 in the tests.
 
-As per the default behaviour of unittest, every test file should start with
+As per the default behavior of unittest, every test file should start with
 \texttt{test} prefix and should correctly represent the file under testing.
 Tests can be written as a part of a class which may include \texttt{setUp}
-and \texttt{taildown} function to represent to initate, and clear some process
+and \texttt{teardown} function to represent to initiate, and clear some process
 at the start and the end of the test execution.
 
 \begin{pythoncode}
@@ -167,17 +167,17 @@ class TestTurtlemintModel(TestCase):
     def test_get_records_count(self):
         # Get the output from the method under test
         result = get_records_count(self.model)
-        self.assertEqual(result, 1) # 1 representing expexted result
+        self.assertEqual(result, 1) # 1 representing expected result
 \end{pythoncode}
 
 \subsection{Postman tests}
-Unittests are always preferred, but for some reason if we need some sort of
+Unittest are always preferred, but for some reason if we need some sort of
 integration tests then postman tests can be written. Postman is an application
 used for API collection management. It introduces a lot of features including
 one to write tests for the API collections. For every request you can mock
 the expected response and check if the response is correct or not. Although
 this might be helpful in some cases, we initially wrote some tests here but
-later due to introduction of unittests we dropped this process.
+later due to introduction of unittest we dropped this process.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{ch4/postman_test.png}

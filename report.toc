@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {2.2}Postgresql}{7}%
 \contentsline {section}{\numberline {2.3}Social Auth}{7}%
 \contentsline {chapter}{\numberline {3}Project Architecture}{9}%
-\contentsline {section}{\numberline {3.1}An overview of the project archituecture}{9}%
+\contentsline {section}{\numberline {3.1}An overview of the project architecture}{9}%
 \contentsline {subsection}{\numberline {3.1.1}Database tables}{9}%
 \contentsline {subsection}{\numberline {3.1.2}CRUD operations}{10}%
 \contentsline {subsection}{\numberline {3.1.3}User permissions}{10}%
@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {4.4}Add CRUD operations}{16}%
 \contentsline {section}{\numberline {4.5}Add views}{16}%
 \contentsline {section}{\numberline {4.6}API testing}{17}%
-\contentsline {subsection}{\numberline {4.6.1}Unittests}{18}%
+\contentsline {subsection}{\numberline {4.6.1}Unittest}{18}%
 \contentsline {subsection}{\numberline {4.6.2}Postman tests}{18}%
 \contentsline {chapter}{\numberline {5}Turtlemint Projects with Django}{20}%
 \contentsline {section}{\numberline {5.1}Turtlemint Assistant Project}{20}%

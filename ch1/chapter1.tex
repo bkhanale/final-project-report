@@ -1,8 +1,8 @@
 \chapter{Introduction}
 
-In any service dealing with the database it becomes extremenly important to
+In any service dealing with the database it becomes extremely important to
 have a constant database structure in place before moving on towards the
-buisiness logic. In Django we define the service in terms of \texttt{app},
+business logic. In Django we define the service in terms of \texttt{app},
 \texttt{models}, \texttt{views} and \texttt{services}. These four parts
 represent the core logic service.
 \texttt{Views} take care of the exchange of the request and response objects from APIs.
@@ -14,10 +14,10 @@ user. This exchange between request and response is a part of Views.
 \section{Background}
 Turtlemint has a separate database which records most of the things related to
 insurance policy issuance. This data is very volatile and is expected to change
-every month. Due to this, it becomes harder to change the database everytime
+every month. Due to this, it becomes harder to change the database every time
 there is a change in the information. To handle this issue, the purpose of the
 project is to create a new service which would wrap the information change in
-terms of database calls and let the user seemlessly update the information.
+terms of database calls and let the user seamlessly update the information.
 
 \section{Significance}
 The new service will be able to handle all information changes related to the
@@ -40,7 +40,7 @@ interface.
 
 \section{Limitations}
 Django being open-source does help is most issues. Although, since Django was
-built to reduce the developement time significantly it might still not have
+built to reduce the development time significantly it might still not have
 all features of a system with independent database architecture. Django also
 introduces the concept of migrations which are a set of database schema changes
 maintained as a set of files. These migrations can be difficult to manage if
